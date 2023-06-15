@@ -1,0 +1,18 @@
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.container__section {
+    background-color: white;
+    padding: 20px;
+    border-bottom: 2px solid #e2dfdf;
+}
+
+.container__header {
+    margin: 0 auto;
+}
+
+.container__taskList {
+    padding: 20px;
+}

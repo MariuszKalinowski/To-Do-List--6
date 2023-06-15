@@ -1,0 +1,36 @@
+.form {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    padding: 20px;
+    background-color: white;
+    gap: 10px;
+    border-bottom: 10px solid #e2dfdf;
+}
+
+@media (max-width: 767px) {
+    .form {
+    grid-template-columns: 1fr;
+    }
+}
+
+
+.form__input {
+    padding: 10px;
+    font-size: 1.2em;
+
+}
+
+.form__button {
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    border: none;
+}
+
+.form__button:active {
+    outline: 2px solid black;
+}
+
