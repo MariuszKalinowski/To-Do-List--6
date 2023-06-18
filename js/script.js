@@ -2,16 +2,7 @@
     console.log("Hello World!");
 
 
-    const tasks = [
-        {
-            content: "Wykonać pracę domową",
-            done: false,
-        },
-        {
-            content: "Wyjść z psem",
-            done: true,                 
-        },
-    ];
+    const tasks = [];
 
     const render = () => {
         let htmlString = "";
@@ -27,17 +18,38 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
+    const addNewTask = (newTask) => {
+        tasks.push({
+            content: newTask,
+        });
+
+        render();
+    }
+
+    const onFormSumbit = (event) => {
+        event.preventDefault();
+
+        const newTask = document.querySelector(".js-newTask").value.trim();
+        
+        if (newTask === "") {
+          return;
+        }
+
+        addNewTask(newTask);
+    };
+
     const init = () => {
             render();
+
+            const form = document.querySelector(".js-form");
+
     }
 
     
     init();
 
-    const button = document.querySelector(".js-button");
+    const form = document.querySelector(".js-form");
 
-    button.addEventListener("click", function(event) {
-        event.preventDefault()
-    });
+    form.addEventListener("submit", onFormSumbit);
+    };
 
-}
