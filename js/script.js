@@ -74,15 +74,11 @@
         render();
 
         const form = document.querySelector(".js-form");
-
-    }
-
+        form.addEventListener("submit", onFormSumbit);
+    };
 
     init();
-
-    const form = document.querySelector(".js-form");
-
-    form.addEventListener("submit", onFormSumbit);
+   
 };
 
 
