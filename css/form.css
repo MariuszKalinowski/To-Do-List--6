@@ -34,3 +34,22 @@
     outline: 2px solid black;
 }
 
+
+.form__task--done {
+    text-decoration: line-through;
+    color: blue;
+}
+
+.form__removeButton {
+
+    background-image: url(../images/removeButton.png);
+    object-fit: inherit;
+
+
+}
+
+.form__taskDone {
+    background-image: url(../images/done.png);
+    object-fit: inherit;
+
+}
