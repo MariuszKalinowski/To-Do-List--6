@@ -23,32 +23,38 @@
         render();
     }
 
-    const bindEvent = () => {const removeButtons = document.querySelectorAll(".js-remove");
+    const bindEvent = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");
 
-    removeButtons.forEach((removeButton, index) => {
-        removeButton.addEventListener("click", () => {
-            removeTask(index);
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
+            });
         });
-    });
 
-    const toggleDoneButtons = document.querySelectorAll(".js-done");
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-    toggleDoneButtons.forEach((toggleDoneButton, index) => {
-        toggleDoneButton.addEventListener("click", () => {
-            toggleTaskDone(index);
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
         });
-    });}
-
-
+    }
+  
     const render = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
             <li ${task.done ? "class=\"form__task--done\"" : ""}>
-            <button class="form__taskDone js-done">Zrobione??</button>
+            <button class="form__taskDone js-done"><span class="material-symbols-outlined">
+            done   
+            </span></button>             
+
             ${task.content}
-            <button class="form__removeButton js-remove">Usuń zadanie</button>
+            <button class="form__removeButton js-remove"><span class="material-symbols-outlined trash">
+            delete
+            </span></button>
             </li>
         `;
         }
@@ -78,7 +84,7 @@
     };
 
     init();
-   
+
 };
 
 
