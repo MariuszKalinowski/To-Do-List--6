@@ -40,21 +40,18 @@
             });
         });
     }
-  
+
     const render = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li ${task.done ? "class=\"form__task--done\"" : ""}>
-            <button class="form__taskDone js-done"><span class="material-symbols-outlined">
-            done   
-            </span></button>             
+            <li ${task.done ? "class=\"form__task--done\"" : "class=\"form__task\""}>
+            <button class="form__taskDoneButton js-done"> ${task.done ? "✔" : ""} </button> 
+            <span class="form__content">${task.content}</span> 
 
-            ${task.content}
-            <button class="form__removeButton js-remove"><span class="material-symbols-outlined trash">
-            delete
-            </span></button>
+            <button class="form__taskRemoveButton js-remove"> 
+             🗑</button>
             </li>
         `;
         }
