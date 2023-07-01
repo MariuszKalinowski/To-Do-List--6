@@ -13,6 +13,6 @@
     margin: 0 auto;
 }
 
-.container__taskList {
-    padding: 20px;
+.container__tasks {
+    padding-left: 0px;
 }
