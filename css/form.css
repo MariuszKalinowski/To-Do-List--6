@@ -83,3 +83,8 @@ body {
 .form__taskRemoveButton:active {
     outline: 1px solid black;   
 }    
+
+.form__content {
+    display:flex;
+    align-items: center;
+}
