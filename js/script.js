@@ -1,6 +1,6 @@
 {
     console.log("Hello World!");
-
+    const newTaskElement = document.querySelector(".js-newTask")
 
     const tasks = [];
 
@@ -64,14 +64,29 @@
     const onFormSumbit = (event) => {
         event.preventDefault();
 
-        const newTask = document.querySelector(".js-newTask").value.trim();
-
+       
+        const newTask = newTaskElement.value.trim();
         if (newTask === "") {
             return;
         }
 
         addNewTask(newTask);
     };
+
+    const newTaskFocus = () => {
+        newTaskElement.focus();
+    }
+    newTaskFocus();
+// nazwy po polsku są robocze
+    const przyciskOdResetowania = () => {
+        const przycisk = document.querySelector(".js-button");
+        przycisk.addEventListener("click", () => {
+            newTaskElement.value = "";
+        });
+    };
+    przyciskOdResetowania();
+
+
 
     const init = () => {
         render();
@@ -83,5 +98,4 @@
     init();
 
 };
-
 
