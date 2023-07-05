@@ -1,6 +1,6 @@
 {
     console.log("Hello World!");
-
+  
     const tasks = [];
 
     const addNewTask = (newTask) => {
@@ -59,24 +59,20 @@
 
         bindEvent();
     };
-    const newTaskElement = document.querySelector(".js-newTask")
+    
     const onFormSumbit = (event) => {
         event.preventDefault();
-
+        const newTaskElement = document.querySelector(".js-newTask")
         const newTaskContent = newTaskElement.value.trim();
+        newTaskElement.focus();
 
         if (newTaskContent !== "") {
-            return addNewTask(newTaskContent);
-        };
-        newTaskElement.value = "";
+            addNewTask(newTaskContent);
+            return newTaskElement.value = "";
+        };        
+                
     };
-
-    const newTaskFocus = () => {
-        newTaskElement.focus();
-    }
-    newTaskFocus();
-
-    const init = () => {
+      const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
