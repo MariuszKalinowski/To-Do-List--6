@@ -25,6 +25,10 @@ body {
 
 }
 
+.form__input:hover {
+    cursor: none;
+}
+
 .form__button {
     padding: 10px;
     background-color: teal;
