@@ -4,7 +4,7 @@
 
 https://mariuszkalinowski.github.io/To-Do-List/
 
-![]https://github.com/MariuszKalinowski/To-Do-List/blob/main/images/ezgif.com-video-to-gif.gif
+![](https://github.com/MariuszKalinowski/To-Do-List/blob/main/images/ezgif.com-video-to-gif.gif)
 
 ## Discription
 
