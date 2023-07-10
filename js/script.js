@@ -1,6 +1,4 @@
 {
-    console.log("Hello World!");
-  
     const tasks = [];
 
     const addNewTask = (newTask) => {
@@ -68,7 +66,7 @@
 
         if (newTaskContent !== "") {
             addNewTask(newTaskContent);
-            return newTaskElement.value = "";
+         newTaskElement.value = "";
         };        
                 
     };
