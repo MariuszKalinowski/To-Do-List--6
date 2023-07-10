@@ -44,11 +44,17 @@
         for (const task of tasks) {
             htmlString += `
             <li ${task.done ? "class=\"form__task--done\"" : "class=\"form__task\""}>
-            <button class="form__taskDoneButton js-done"> ${task.done ? "✔" : ""} </button> 
-            <span class="form__content">${task.content}</span> 
+            <button class="form__taskDoneButton js-done">
+            ${task.done ? "✔" : ""} 
+            </button> 
+
+            <span class="form__content"> 
+            ${task.content}
+            </span> 
 
             <button class="form__taskRemoveButton js-remove"> 
-             🗑</button>
+             🗑
+            </button>
             </li>
         `;
         }
@@ -57,7 +63,7 @@
 
         bindEvent();
     };
-    
+
     const onFormSumbit = (event) => {
         event.preventDefault();
         const newTaskElement = document.querySelector(".js-newTask")
@@ -66,11 +72,11 @@
 
         if (newTaskContent !== "") {
             addNewTask(newTaskContent);
-         newTaskElement.value = "";
-        };        
-                
+            newTaskElement.value = "";
+        };
+
     };
-      const init = () => {
+    const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
