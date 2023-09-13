@@ -1,24 +1,36 @@
 {
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTask) => {
-        tasks.push({
-            content: newTask,
-        });
-
+        tasks = [
+            ...tasks,
+            {content: newTask},
+        ];
         render();
     };
 
+
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+          ...tasks.slice(0, taskIndex),
+          ...tasks.slice(taskIndex +1),
+        ];
         render();
     }
 
+    /* TAK BYŁO PRZED ZMIANĄ NA MAP
+    
+    const toggleTaskDone = (taskIndex) => { 
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+     
+        render();
+    };    
+    */
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
-        render();
-    }
+        tasks = tasks.map()
+    };
 
     const bindEvent = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -36,9 +48,9 @@
                 toggleTaskDone(index);
             });
         });
-    }
+    };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -56,12 +68,24 @@
              🗑
             </button>
             </li>
-        `;
-        }
-
+        `};
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    };
+
+    const rednerButtons = () => {};
+
+    const bindButtonsEvents = () => {
+        // użyć if  i wtedy dodać addEventListener
+    };
+
+
+    const render = () => {
+        
+        renderTasks();
+        rednerButtons();
 
         bindEvent();
+        bindButtonsEvents();
     };
 
     const onFormSumbit = (event) => {
