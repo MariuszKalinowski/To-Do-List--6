@@ -29,7 +29,9 @@
     */
 
     const toggleTaskDone = (taskIndex) => {
-        tasks = tasks.map()
+        tasks = tasks.map((task, index) => 
+            index === taskIndex ? task.done : !task.done );
+        render();
     };
 
     const bindEvent = () => {
