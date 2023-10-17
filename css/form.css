@@ -10,6 +10,7 @@ body {
     background-color: white;
     gap: 10px;
     border-bottom: 10px solid #e2dfdf;
+    margin: 0 20px;
 }
 
 @media (max-width: 767px) {
@@ -31,10 +32,15 @@ body {
 
 .form__button {
     padding: 10px;
-    background-color: teal;
+    background-color: hsl(180, 100%, 25%);
     color: white;
     font-family: 'Montserrat', sans-serif;
     border: none;
+    transition: 1s;
+}
+.form__button:hover {
+    background-color: hsl(180, 100%, 30%);
+    transform: scale(1.05);
 }
 
 .form__button:active {
@@ -67,10 +73,15 @@ body {
 
 .form__taskDoneButton {
    border: none;
-   background-color: green;
+   background-color: hsl(120, 100%, 25%);
    color: white;
    width: 30px;
    height: 30px;
+   transition: 1s;
+}
+
+.form__taskDoneButton:hover {
+    background-color: hsl(120, 100%, 35%);
 }
 .form__taskDoneButton:active {
     outline: 1px solid black;    
@@ -79,11 +90,17 @@ body {
 .form__taskRemoveButton {   
     padding: 0px;
     border: none;
-    background-color: red;
+    background-color: hsl(0, 100%, 35%);
     color: white;
     width: 30px;
     height: 30px;
+    transition: 1s;
 }
+
+.form__taskRemoveButton:hover {   
+    background-color: hsl(0, 100%, 50%);
+}
+
 .form__taskRemoveButton:active {
     outline: 1px solid black;   
 }    
